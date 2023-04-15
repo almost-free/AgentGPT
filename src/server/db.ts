@@ -23,4 +23,4 @@ export const chroma =
 
 export const embeddingFunction =
   globalForChroma.embeddingFunction ||
-  new OpenAIEmbeddingFunction(env.OPENAI_API_KEY);
+  new OpenAIEmbeddingFunction(env.OPENAI_API_KEY, 'text-embedding-ada-002'); // default is text-embedding-ada-002 if not specified
