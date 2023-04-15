@@ -11,6 +11,7 @@ const requiredForProduction = () => process.env.NODE_ENV === "production"
  */
 export const serverSchema = z.object({
   DATABASE_URL: z.string().url(),
+  CHROMA_DATABASE_URL: z.string().url(),
   NODE_ENV: z.enum(["development", "test", "production"]),
   NEXTAUTH_SECRET: requiredForProduction(),
   NEXTAUTH_URL: z.preprocess(
@@ -46,7 +47,8 @@ export const serverEnv = {
   GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
   GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
   DISCORD_CLIENT_ID:  process.env.DISCORD_CLIENT_ID,
-  DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET
+  DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+  CHROMA_DATABASE_URL: process.env.CHROMA_DATABASE_URL,
 };
 
 /**
